@@ -103,7 +103,7 @@ public class SpotifyRepository {
     }
 
     public Playlist createPlaylistOnLength(String mobile, String title, int length) throws Exception {
-        Playlist p1 = new Playlist(title);;
+        Playlist p1 = new Playlist(title);
         boolean flag = false;
         for(User i : users){
             if(i.getMobile().equals(mobile)){
@@ -134,7 +134,7 @@ public class SpotifyRepository {
     }
 
     public Playlist createPlaylistOnName(String mobile, String title, List<String> songTitles) throws Exception {
-        Playlist p1 = new Playlist(title);;
+        Playlist p1 = new Playlist(title);
         boolean flag = false;
         for(User i : users){
             if(i.getMobile().equals(mobile)){
@@ -230,6 +230,7 @@ public class SpotifyRepository {
         if(flag == false) throw new Exception("Song does not exist");
 
         temp2.setLikes(temp2.getLikes()+1);
+
 
         // setting like to artist
         Album alb = null;
