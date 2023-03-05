@@ -188,7 +188,7 @@ public class SpotifyRepository {
         if(!flag) throw new Exception("Playlist does not exist");
 
         // If the user is creater or already a listener, do nothing
-        if(creatorPlaylistMap.get(temp) == temp2){
+        if(creatorPlaylistMap.get(temp).getTitle().equals(temp2.getTitle())){
             return temp2;
         }
         List<User> u = playlistListenerMap.get(temp2);
@@ -260,7 +260,8 @@ public class SpotifyRepository {
         int max = 0;
         String output = "";
         for(Artist i : artists){
-            if(i.getLikes() > max){
+            if(i.getLikes() >= max){
+                max = i.getLikes();
                 output = i.getName();
             }
         }
@@ -271,7 +272,8 @@ public class SpotifyRepository {
         int max = 0;
         String output = "";
         for(Song i : songs){
-            if(i.getLikes() > max){
+            if(i.getLikes() >= max){
+                max = i.getLikes();
                 output = i.getTitle();
             }
         }
