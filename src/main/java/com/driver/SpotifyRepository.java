@@ -217,7 +217,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!flag) throw new Exception("User does not exist");
+        if(flag == false) throw new Exception("User does not exist");
 
         flag = false;
         for (Song i : songs) {
@@ -227,7 +227,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!flag) throw new Exception("Song does not exist");
+        if(flag == false) throw new Exception("Song does not exist");
 
         temp2.setLikes(temp2.getLikes()+1);
 
